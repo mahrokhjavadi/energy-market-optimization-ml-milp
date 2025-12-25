@@ -28,11 +28,12 @@ The objective is to determine optimal operational strategies that maximize econo
 value while respecting realistic technical constraints such as:
 
 - Battery power and energy limits
-- State-of-charge dynamics
+- State-of-charge (SOC) dynamics
 - No simultaneous charging and discharging
 - Daily operational consistency
 
-The project is modular and designed for experimentation, analysis, and extension.
+The project is modular and designed for experimentation, analysis, and extension,
+covering the full pipeline from data generation to optimization results.
 
 
 --------------------------------------------------------------
@@ -76,7 +77,7 @@ DATA DESCRIPTION
 
 All electricity price data in this repository is synthetic.
 
-Resolutions:
+Time resolutions:
 - 15-minute resolution (base data)
 - 60-minute resolution (hourly aggregated data)
 
@@ -140,8 +141,9 @@ Machine Learning:
 - Gradient boosting model (LightGBM)
 - Features:
   - Lagged prices
-  - Rolling statistics (mean, volatility)
-- Target: next-hour electricity price
+  - Rolling statistics (mean and volatility)
+- Target variable:
+  - Next-hour electricity price
 
 Optimization:
 - MILP uses forecasted prices instead of perfect information
@@ -158,9 +160,9 @@ Outputs:
 4) EXPLORATORY DATA ANALYSIS (EDA)
 ---------------------------------
 
-Analyzes and compares electricity price behavior at different resolutions.
+Analyzes and compares electricity price behavior at different time resolutions.
 
-Analyses:
+Analyses include:
 - Descriptive statistics
 - Distribution comparison
 - Correlation analysis
@@ -181,10 +183,10 @@ outputs/price_data_exploration/
 KEY INSIGHTS
 --------------------------------------------------------------
 
-- Higher-frequency prices show increased volatility
+- Higher-frequency prices exhibit increased volatility
 - Temporal aggregation smooths extreme price spikes
 - Forecast uncertainty reduces achievable profits compared to perfect information
-- MILP provides interpretable and reproducible decision logic
+- MILP provides interpretable and reproducible operational decision logic
 
 
 --------------------------------------------------------------
@@ -200,7 +202,7 @@ Python packages:
 - lightgbm
 - scikit-learn
 
-Install:
+Install dependencies:
 pip install numpy pandas matplotlib seaborn pulp lightgbm scikit-learn
 
 macOS (Apple Silicon):
@@ -232,8 +234,8 @@ POSSIBLE EXTENSIONS
 AUTHOR
 --------------------------------------------------------------
 
-Mahrokh Javadi
-PhD | Optimization & Data Science
+Mahrokh Javadi  
+PhD | Optimization & Data Science  
 Germany
 
 
@@ -241,4 +243,5 @@ Germany
 NOTE
 --------------------------------------------------------------
 
-This project is intended for research, learning, and portfolio demonstration purposes.
+This project is intended solely for research, learning, and portfolio demonstration
+purposes.
