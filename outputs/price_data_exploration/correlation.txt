@@ -1,0 +1,1 @@
+Correlation between 15-min (hourly aggregated) and 60-min prices: 1.0000

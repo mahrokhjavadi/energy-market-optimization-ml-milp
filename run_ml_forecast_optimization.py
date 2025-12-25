@@ -1,11 +1,11 @@
 import os
 import pandas as pd
 
-from preprocessing_ml import load_and_preprocess_data
-from feature_engineering import create_lag_features, create_rolling_features
-from modeling import train_lightgbm_model
-from optimization import optimize_battery_milp_1mwh
-from visualization import (
+from src.preprocessing_ml import load_and_preprocess_data
+from src.feature_engineering import create_lag_features, create_rolling_features
+from src.modeling import train_lightgbm_model
+from src.optimization import optimize_battery_milp_1mwh
+from src.visualization import (
     plot_actual_vs_predicted,
     plot_daily_profits,
     plot_strategy_forecast,
@@ -16,7 +16,7 @@ def main():
     # =========================
     # Configuration
     # =========================
-    file_path = "data/synthetic_prices.csv"
+    file_path = "data/synthetic_prices_60min.csv"
     output_folder = "outputs/ml_forecast_optimization"
     train_ratio = 0.8  # 80% train, 20% test
 

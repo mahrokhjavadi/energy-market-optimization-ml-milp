@@ -256,3 +256,15 @@ def plot_histogram(price_15min, price_60min, output_folder):
     plt.tight_layout()
     plt.savefig(os.path.join(output_folder, "histogram_prices.png"))
     plt.show()
+
+
+def plot_line_chart_single(prices, output_folder):
+    plt.figure(figsize=(12, 6))
+    plt.plot(prices.index, prices.values, label="Price")
+    plt.xlabel("Time")
+    plt.ylabel("Price (EUR/MWh)")
+    plt.title("Synthetic Electricity Prices")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_folder, "price_time_series.png"))
+    plt.show()

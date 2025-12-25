@@ -1,16 +1,16 @@
 import os
 import pandas as pd
 
-from preprocessing import load_and_preprocess_data
-from optimization import optimize_battery_milp_1mwh
-from visualization import plot_daily_profits, plot_strategy_1mwh
+from src.preprocessing import load_and_preprocess_data
+from src.optimization import optimize_battery_milp_1mwh
+from src.visualization import plot_daily_profits, plot_strategy_1mwh
 
 
 def main():
     # =========================
     # Configuration
     # =========================
-    file_path = "data/synthetic_prices.csv"
+    file_path = "data/synthetic_prices_60min.csv"
     output_folder = "outputs/milp_1mwh"
     n_days = 180
     day_index_to_plot = 150
